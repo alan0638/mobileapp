@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HW_Two</string>
+    <string name="NewActivity">NewActivity</string>
+    <string name="Back">Back</string>
+</resources>
