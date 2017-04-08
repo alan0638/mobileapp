@@ -36,8 +36,8 @@
         />
     <Button
         android:id="@+id/reset_button"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
         android:layout_marginLeft="330sp"
         android:layout_marginTop="8dp"
         android:background="@drawable/ecologism"

@@ -1,6 +1,6 @@
 package com.studioyuando.guess;
 
-import android.content.Context;
+//import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,27 +9,26 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-public class Adapter extends
-        RecyclerView.Adapter<Adapter.ViewHolder> {
-    private int mNumberItems;
+public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
+    private int NumItems;
     private int min, max, answer;
     private int[] status;
 
-    public Adapter(int numberOfItems) {
-        mNumberItems = numberOfItems;
+    public Adapter(int quantity) {
+        NumItems = quantity;
         min = 0;
-        max = numberOfItems - 1;
-        answer = (int) (Math.random() * numberOfItems);
-        status = new int[mNumberItems];
+        max = quantity - 1;
+        answer = (int) (Math.random() * quantity);
+        status = new int[NumItems];
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView mTxt;
+        public TextView Txt;
         public View rootView;
 
         public ViewHolder(View view) {
             super(view);
-            mTxt = (TextView) itemView.findViewById(R.id.item_number);
+            Txt = (TextView) itemView.findViewById(R.id.item_number);
             rootView = view;
         }
     }
@@ -44,31 +43,38 @@ public class Adapter extends
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int state) {
-        holder.mTxt.setText(String.valueOf(state + 1));
-        if (status[state] == 0)
+        holder.Txt.setText(String.valueOf(state + 1));
+        if (status[state] == 0) {
             holder.itemView.setBackgroundColor(Color.WHITE);
-        else if (status[state] == 1)
+        }
+        else if (status[state] == 1) {
             holder.itemView.setBackgroundColor(Color.GRAY);
-        else if (status[state] == 2)
+        }
+        else if (status[state] == 2) {
             holder.itemView.setBackgroundColor(Color.RED);
+        }
     }
 
     @Override
     public int getItemCount() {
-        return mNumberItems;
+        return NumItems;
     }
 
-    public boolean game(int state) {
-        if (state > answer) {
-            for (int i = state; i <= max; i++)
+    public boolean game(int choose) {
+        if (choose > answer) {
+            for (int i = choose; i <= max; i++) {
                 status[i] = 1;
-            max = state;
-        } else if (state < answer) {
-            for (int i = min; i <= state; i++)
+            }
+            max = choose;
+        }
+        else if (choose < answer) {
+            for (int i = min; i <= choose; i++) {
                 status[i] = 1;
-            min = state;
-        } else if (state == answer) {
-            status[state] = 2;
+            }
+            min = choose;
+        }
+        else if (choose == answer) {
+            status[choose] = 2;
             return true;
         }
         return false;
