@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/draw"
+    android:elevation="1dp"
+    android:orientation="horizontal"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/id_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginLeft="5dp"
+        android:layout_weight="0.10"
+        android:text="1001"
+        android:textSize="30sp"
+        />
+
+    <TextView
+        android:id="@+id/guest_name_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="0dp"
+        android:layout_weight="0.64"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Seern"
+        android:textSize="40sp"
+        />
+
+    <TextView
+        android:id="@+id/age_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0.26"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="20"
+        android:textSize="35sp"
+        />
+
+    <ImageView
+        android:id="@+id/gender_img"
+        android:layout_width="44dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="5dp"
+        android:layout_weight="0.12"
+        android:background="@android:drawable/ic_notification_overlay"
+        app:srcCompat="@mipmap/female"
+        />
+</LinearLayout>
